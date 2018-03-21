@@ -19,6 +19,9 @@
     @toggle="toggleFilter"
     @clearAllCompleted ="clearAllCompleted"
     />
+
+
+    
   </section>
 
 </template>
