@@ -56,13 +56,10 @@ export default {
   background-color #ffffff
   font-size 14px
   font-smoothing antialiased
-.left,
-.clear,
-.tabs
+.left,.clear,.tabs
   padding 0 10px
   box-sizing border-box
-.left,
-.clear
+.left,.clear
   width 150px
 .left
   text-align left
