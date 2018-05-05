@@ -1,34 +1,29 @@
-<template>
+  <template>
   <section class="real-app">
-    <input type="text" 
+    <input 
+      type="text" 
       class="add-input"
       autofocus="autofocus"
       placeholder="接下去要做什么"
-      @keyup="addTodo"
-
+      @keyup.enter="addTodo"
     >
-
-    <item :todo="todo"
-    v-for="todo in todos"
-    :key ="todo.id"
-    @del = "deleteTodo"
+    <item 
+      :todo="todo"
+      v-for="todo in filteredTodos"
+      :key ="todo.id"
+      @del = "deleteTodo"
     />
-    <tabs 
-    :filter="filter" 
-    :todos="todos"
-    @toggle="toggleFilter"
-    @clearAllCompleted ="clearAllCompleted"
+    <tabs  
+      :filter="filter" 
+      :todos="todos"
+      @toggle="toggleFilter"
+      @clearAllCompleted ="clearAllCompleted"
     />
-
-
-    
   </section>
-
 </template>
 <script>
-
-  import  Item  from './item.vue'
-  import Tabs from "./tabs.vue";
+import Item  from './item.vue'
+import Tabs from "./tabs.vue";
 let id = 0;
 export default {
   data(){

@@ -14,8 +14,7 @@ export default {
     todo:{
       type:Object,
       required:true
-    },
-
+    }
   },
   methods:{
     deleteTodo(){
@@ -42,13 +41,13 @@ export default {
     display block 
     line-height 1.2
     transition color 0.4s
-&.completed
-  label 
-    color #d9d9d9
-    text-decoration line-through
+  &.completed
+    label 
+      color #d9d9d9
+      text-decoration line-through
 .toggle
   text-align center 
-  width 400px
+  width 40px
   height 40px
   position absolute
   top 0
@@ -57,7 +56,14 @@ export default {
   border none 
   outline none 
   appearance none
-.delete
+  outline none 
+  &:after{
+    content url('../assets/images/round.svg')
+  }
+  &:checked:after{
+    content url('../assets/images/done.svg')
+  }
+.destory
   position absolute
   top 50%
   right 10px

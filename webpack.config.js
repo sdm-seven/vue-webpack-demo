@@ -6,7 +6,7 @@ const webpack = require('webpack')
 const ExtractPlugin = require('extract-text-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === "development"
-
+const env = isDev ? '"development"' : '"production"'
 const config  = {
     target:'web',
     entry: path.join(__dirname, 'src/index.js'),
@@ -37,7 +37,7 @@ const config  = {
     plugins:[
         new webpack.DefinePlugin({
             'process.env':{
-                NODE_ENV:isDev?'"development"':'"production"'
+              NODE_ENV: env
             }
         }),
         new HTMLPlugin()
@@ -97,7 +97,7 @@ if(isDev){
             ]    
         })        
     });
-    config.plugins.rules.push(
+    config.plugins.push(
         new ExtractPlugin('stylus.[contentHash:8].css'),
         new webpack.optimize.CommonsChunkPlugin({
             name:'vendor'

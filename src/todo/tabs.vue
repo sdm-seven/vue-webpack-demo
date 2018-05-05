@@ -25,23 +25,23 @@ export default {
       type:Array,
       required:true
     },
-    data(){
+  },
+  data(){
       return {
         states:['all','active','completed']
       }      
+  },
+  computed:{
+    unFinshedTodoLength(){        
+      return this.todos.filter(todo => !todo.completed).length
+    }
+  },
+  methods:{
+    clearAllCompleted(){
+      this.$emit('clearAllCompleted')
     },
-    computed:{
-      unFinshedTodoLength(){
-        return this.todos.filter(todo => !todo.completed).length
-      }
-    },
-    methods:{
-      clearAllCompleted(){
-        this.$emit('clearAllCompleted')
-      },
-      toggleFilter(state){
-        this.$emit('toggleFilter',state)
-      }
+    toggleFilter(state){
+      this.$emit('toggleFilter',state)
     }
   }
 }
