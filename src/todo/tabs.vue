@@ -32,7 +32,7 @@ export default {
       }      
   },
   computed:{
-    unFinshedTodoLength(){        
+    unFinshedTodoLength(){             
       return this.todos.filter(todo => !todo.completed).length
     }
   },
@@ -41,6 +41,7 @@ export default {
       this.$emit('clearAllCompleted')
     },
     toggleFilter(state){
+      debugger;
       this.$emit('toggleFilter',state)
     }
   }

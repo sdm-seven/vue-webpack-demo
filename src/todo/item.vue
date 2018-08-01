@@ -31,7 +31,7 @@ export default {
   font-size 24px
   border-bottom 1px solid rgba(0,0,0,.06)
   &:hover
-    .delete:after 
+    .destroy:after
       content: 'x'
   label  
     white-space pre-line
@@ -63,9 +63,23 @@ export default {
   &:checked:after{
     content url('../assets/images/done.svg')
   }
-.destory
-  position absolute
-  top 50%
-  right 10px
+.destroy
+      position: absolute;
+      top: 0;
+      right: 10px;
+      bottom: 0;
+      width: 40px;
+      height: 40px;
+      margin: auto 0;
+      font-size: 30px;
+      color: #cc9a9a;
+      margin-bottom: 11px;
+      transition: color 0.2s ease-out;
+      background-color transparent
+      appearance none
+      border-width 0
+      cursor pointer
+      outline none
+  
 </style>
 
